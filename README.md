@@ -19,5 +19,5 @@ The point of the program is to make working in the terminal easier when dealing 
 that output huge amounts of text. (such as a compiler outputting a long series of error messages)
 The normal clear command is helpful in this case, but doesnt add any spacing in between outputs,
 which makes differentiating between blocks of output text rather difficult. The name teras stands
-for 'terminal erasor', shortened to the quickest set of characters that can be typed on a qwerty
+for 'terminal eraser', shortened to the quickest set of characters that can be typed on a qwerty
 keyboard.
