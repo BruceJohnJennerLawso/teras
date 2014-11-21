@@ -1,0 +1,4 @@
+#! /bin/bash
+#
+	python ./teras.py $1
+#
