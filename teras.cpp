@@ -14,17 +14,20 @@
 #include <unistd.h>
 #include <term.h>
 
+//#define RPITHINK
+
+#ifdef RPITHINK
+	#define WIDTH 30
+#else
+	#define WIDTH 80
+#endif
+
 
 void clearScreen();
 std::string Get_hhmmss_time();
 
 int main(int argc, char* argv[])
-{	//int lines = 0;	
-	// unbelievably, this wont compile with this specific variable name, for
-	// reasons which escape me completely. Maybe its a bug with g++ itself,
-	// but when an int called lines is defined here, the compiler spits out an
-	// error, something to do with a '->' operator, which isnt actually there
-	// its bizarre to say the least
+{	
 	
 	int new_lines;
 	// how many new lines of buffer space we would like
@@ -52,15 +55,24 @@ int main(int argc, char* argv[])
 	}
 	clearScreen();
 	// use our special function to clear the terminal
-	for(unsigned int cy = 0; cy != 80; ++cy)
+	for(unsigned int cy = 0; cy != WIDTH; ++cy)
 	{	std::cout << "/";
 	}	std::cout << std::endl;
 	// print the first 80 wide line of slashes to the command line
-	std::cout << "////////////////////////////////////" << Get_hhmmss_time();
-	std::cout << "////////////////////////////////////" << std::endl;
+	
+	int halfWidth = ((WIDTH - 8)/2);	
+
+	for(unsigned int cy = 0; cy != halfWidth; ++cy)
+	{	std::cout << "/"; 
+	}
+	std::cout << Get_hhmmss_time();
+	for(unsigned int cy = 0; cy != halfWidth; ++cy)
+	{	std::cout << "/"; 
+	}
+	std::cout << std::endl;
 	// print an 80 character wide line with the current time in the center
 	// (maybe makes it easier to track commands made in the terminal over time
-	for(unsigned int cy = 0; cy != 80; ++cy)
+	for(unsigned int cy = 0; cy != WIDTH; ++cy)
 	{	std::cout << "/";
 	}	std::cout << std::endl;
 	// and print the last 80 wide line of slashes to the command line
@@ -86,7 +98,7 @@ std::string Get_hhmmss_time()
 
 void clearScreen()
 {	if (!cur_term)
-	{
+{
 		int result;
 		setupterm( NULL, STDOUT_FILENO, &result );
 		if (result <= 0) return;
