@@ -39,10 +39,17 @@ def getTimeString():
 	return output;
 
 def printBreak(breaks):
+	
 	for cy in range(0, int(breaks)):
 		print "\n";
-	
+
+	print "calling os.system('clear')"	
 	os.system('clear')
+	# bizarrely enough, clear dumps garbage into the console every time
+	# wtf is that
+	# so we will need to make the screen wiper from the c++ part
+	# available as a call in python
+	print "finished calling os.system('clear')"
 	# *C++ programmer shudders*
 
 	print style_char*80;
@@ -63,16 +70,16 @@ def printBreak(breaks):
 
 
 def main():
-
-	if(len(sys.argv) == 1):
-		printBreak(0);
-	else:
-		firstArg = -1;
-		#for arg in sys.argv:
-		#	firtsArg = arg;
-		#	break;
+	print "Running teras.py with version 1.01"
+	linesInput = 0;
+	if(len(sys.argv) > 1):
 		firstArg = sys.argv[1];
-		printBreak(firstArg);
+		linesInput = int(firstArg);
+	##else:
+		# we had some bad input, maybe a word was input where we should
+		# have gotten a number, so we just stick with 0 as an assumed
+		# input
+	printBreak(linesInput);
 	return;
 
 
