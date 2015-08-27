@@ -14,7 +14,7 @@ style_char = "#"
 def clearTerminal(x):
 	## Clears the screen after printing x newlines.
 	print "\n" * x
-	sys.stdout.write("\x1b[0J\x1b[H");
+	sys.stdout.write("\x1b[2J\x1b[H");
 
 def getTimeString():
 	output = "";
