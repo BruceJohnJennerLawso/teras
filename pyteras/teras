@@ -2,9 +2,9 @@
 #
 	printf "Running bash script teras with argument "
 	printf $1
-	printf " test version 1.01\n"
+	printf " test version 1.03\n"
 	printf "Python script starts here\n"
-	python ./teras.py $1
+	python /usr/sbin/teras.py $1
 	printf "Python script stops here\n"
-	printf "\nFinished running teras.py script, teras bash script ending now\n"
+	printf "\nFinished running teras.py script, teras bash script ending now 4\n"
 #

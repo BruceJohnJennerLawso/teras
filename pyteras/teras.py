@@ -7,7 +7,14 @@ import datetime
 
 import os
 
+
 style_char = "#"
+
+	
+def clearTerminal(x):
+	## Clears the screen after printing x newlines.
+	print "\n" * x
+	sys.stdout.write("\x1b[0J\x1b[H");
 
 def getTimeString():
 	output = "";
@@ -40,16 +47,15 @@ def getTimeString():
 
 def printBreak(breaks):
 	
-	for cy in range(0, int(breaks)):
-		print "\n";
+	##for cy in range(0, int(breaks)):
+	##	print "\n";
 
-	print "calling os.system('clear')"	
-	os.system('clear')
+	##clearTerminal();
+	clearTerminal(breaks);
 	# bizarrely enough, clear dumps garbage into the console every time
 	# wtf is that
 	# so we will need to make the screen wiper from the c++ part
 	# available as a call in python
-	print "finished calling os.system('clear')"
 	# *C++ programmer shudders*
 
 	print style_char*80;
@@ -70,7 +76,6 @@ def printBreak(breaks):
 
 
 def main():
-	print "Running teras.py with version 1.01"
 	linesInput = 0;
 	if(len(sys.argv) > 1):
 		firstArg = sys.argv[1];
