@@ -1,10 +1,10 @@
 #!/bin/bash
 #
-	printf "Running bash script teras with argument "
-	printf $1
-	printf " test version 1.01\n"
-	printf "Python script starts here\n"
+	##printf "Running bash script teras with argument "
+	##printf $1
+	##printf " test version 1.01\n"
+	##printf "Python script starts here\n"
 	python ./teras.py $1
-	printf "Python script stops here\n"
-	printf "\nFinished running teras.py script, teras bash script ending now\n"
+	##printf "Python script stops here\n"
+	##printf "\nFinished running teras.py script, teras bash script ending now\n"
 #
