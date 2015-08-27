@@ -1,5 +1,9 @@
 #!/bin/bash
 
+sudo cp -i teras.py /usr/sbin
+#sudo cp -i teras /usr/sbin
+
+#sudo cp -i teras.py /usr/bin
 sudo cp -i teras /usr/bin
 
 exit 0

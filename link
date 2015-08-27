@@ -1,5 +1,0 @@
-#!/bin/bash
-
-g++ teras.o -o teras -lcurses
-
-exit 0

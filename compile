@@ -1,5 +1,0 @@
-#!/bin/bash
-
-g++ -c -std=c++0x teras.cpp 
-
-exit 0
