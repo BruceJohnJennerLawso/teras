@@ -11,7 +11,9 @@ style_char = "#"
 	
 def clearTerminal(x):
 	## Clears the screen after printing x newlines.
-	print "\n" * x
+	if(x>0):
+		for i in range(0, (x-1)):
+			print "\n",
 	sys.stdout.write("\x1b[2J\x1b[H");
 
 def getTimeString():
@@ -44,23 +46,10 @@ def getTimeString():
 	return output;
 
 def printBreak(breaks):
-	
-	##for cy in range(0, int(breaks)):
-	##	print "\n";
-
-	##clearTerminal();
 	clearTerminal(breaks);
-	# bizarrely enough, clear dumps garbage into the console every time
-	# wtf is that
-	# so we will need to make the screen wiper from the c++ part
-	# available as a call in python
-	# *C++ programmer shudders*
-
 	print style_char*80;
-
 	time = getTimeString();
 	timeSpace = (2+len(time));
-	
 	leftWrap = int(40 - (timeSpace/2));
 	rightWrap = 80 - (timeSpace + leftWrap);
 	print (style_char*leftWrap) + (" " + time + " ") + (style_char*rightWrap);
@@ -78,10 +67,8 @@ def main():
 	if(len(sys.argv) > 1):
 		firstArg = sys.argv[1];
 		linesInput = int(firstArg);
-	##else:
-		# we had some bad input, maybe a word was input where we should
-		# have gotten a number, so we just stick with 0 as an assumed
-		# input
+	else:
+		linesInput = 0;
 	printBreak(linesInput);
 	return;
 
