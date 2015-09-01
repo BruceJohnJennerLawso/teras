@@ -5,8 +5,6 @@
 import sys
 import datetime
 
-import os
-
 
 style_char = "#"
 
@@ -87,8 +85,8 @@ def main():
 	printBreak(linesInput);
 	return;
 
-
-main();
+if (__name__ == "__main__"):
+	main();
 
 
 
