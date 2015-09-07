@@ -45,15 +45,15 @@ def getTimeString():
 				output = "0%i:0%i:0%i" % (h, m, s);
 	return output;
 
-def printBreak(breaks):
+def printBreak(breaks, termwidth):
 	clearTerminal(breaks);
-	print style_char*80;
+	print style_char*termwidth;
 	time = getTimeString();
 	timeSpace = (2+len(time));
-	leftWrap = int(40 - (timeSpace/2));
-	rightWrap = 80 - (timeSpace + leftWrap);
+	leftWrap = int((termwidth/2) - (timeSpace/2));
+	rightWrap = termwidth - (timeSpace + leftWrap);
 	print (style_char*leftWrap) + (" " + time + " ") + (style_char*rightWrap);
-	print style_char*80;
+	print style_char*termwidth;
 	return;
 
 
@@ -69,7 +69,7 @@ def main():
 		linesInput = int(firstArg);
 	else:
 		linesInput = 0;
-	printBreak(linesInput);
+	printBreak(linesInput, 30);
 	return;
 
 if (__name__ == "__main__"):
