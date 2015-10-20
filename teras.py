@@ -40,7 +40,7 @@ def getTimeString():
 				output = "0%i:%i:0%i" % (h, m, s);
 		else:
 			if(s > 9):
-				output = "0%i:0%i:%i" & (h, m, s);
+				output = "0%i:0%i:%i" % (h, m, s);
 			else:
 				output = "0%i:0%i:0%i" % (h, m, s);
 	return output;
