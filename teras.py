@@ -69,7 +69,7 @@ def main():
 		linesInput = int(firstArg);
 	else:
 		linesInput = 0;
-	printBreak(linesInput, 30);
+	printBreak(linesInput, 80);
 	return;
 
 if (__name__ == "__main__"):
