@@ -1,0 +1,5 @@
+#!/bin/bash
+
+geany teras.py teras drop gitter &
+
+exit 0
