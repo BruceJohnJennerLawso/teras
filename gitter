@@ -1,5 +1,11 @@
 #!/bin/bash
 
-geany teras.py teras drop gitter &
+if [ $# -eq 0 ]; then
+	baseFolder="."
+else
+	baseFolder="$1"
+fi
+
+geany "$baseFolder/teras.py" "$baseFolder/teras" "$baseFolder/drop" "$baseFolder/gitter" &
 
 exit 0
