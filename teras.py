@@ -66,7 +66,11 @@ def main():
 	linesInput = 0;
 	if(len(sys.argv) > 1):
 		firstArg = sys.argv[1];
-		linesInput = int(firstArg);
+		
+		try:
+			linesInput = int(firstArg);
+		except ValueError:
+			linesInput = 0;
 	else:
 		linesInput = 0;
 	printBreak(linesInput, 80);
