@@ -13,7 +13,7 @@ def clearTerminal(x):
 	## Clears the screen after printing x newlines.
 	if(x>0):
 		for i in range(0, (x-1)):
-			print "\n",
+			print("\n"),
 	sys.stdout.write("\x1b[2J\x1b[H");
 
 def getTimeString():
@@ -47,13 +47,13 @@ def getTimeString():
 
 def printBreak(breaks, termwidth):
 	clearTerminal(breaks);
-	print style_char*termwidth;
+	print(style_char*termwidth);
 	time = getTimeString();
 	timeSpace = (2+len(time));
 	leftWrap = int((termwidth/2) - (timeSpace/2));
 	rightWrap = termwidth - (timeSpace + leftWrap);
-	print (style_char*leftWrap) + (" " + time + " ") + (style_char*rightWrap);
-	print style_char*termwidth;
+	print((style_char*leftWrap) + (" " + time + " ") + (style_char*rightWrap));
+	print(style_char*termwidth);
 	return;
 
 
